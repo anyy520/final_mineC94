@@ -184,25 +184,25 @@ if(e.shiftKey && keyPressed == '68')
 		new_image('nuvem.jpg'); 
 		console.log("n");
 	}
-	
+//94  	
 }
 function up()
 {
 	if(player_y >=0)
 	{
-		player_y = player_y - block_image_height;
+		player_y = player_y - block_image_height;//significa que player_y será atualizado de acordo com player_y subtraído do valor de block_image_height
 		console.log("altura da imagem do bloco = " + block_image_height);
 		console.log("Quando a seta para cima é pressionada, X =  " + player_x + " , Y = "+player_y);
-		canvas.remove(player_object);
-		player_update();
+		canvas.remove(player_object);//Remova a imagem do jogador do canvas, pois não queremos manter a imagem da posição antiga.
+		player_update();//Essa função enviará a nova imagem do jogador ao canvas, que definimos na última aula.
 	}
 }
 
 function down()
 {
-	if(player_y <=500)
+	if(player_y <=500)//verificaremos se player_y é igual ou menor que 500, para então permitir que ele se mova para baixo.
 	{
-		player_y = player_y + block_image_height;
+		player_y = player_y + block_image_height;//significa que player_y será atualizado de acordo com player_y + block_image_height
 		console.log("altura da imagem do bloco = " + block_image_height);
 		console.log("Quando a seta para baixo é pressionada, X =  " + player_x + " , Y = "+player_y);
 		canvas.remove(player_object);
@@ -224,7 +224,7 @@ function left()
 
 function right()
 {
-	if(player_x <=850)
+	if(player_x <=850)//verificaremos se player_x é igual ou menor que 850, para então permitir que ele se mova para direita
 	{
 		player_x = player_x + block_image_width;
 		console.log("largura da imagem do bloco = " + block_image_width);
